@@ -27,9 +27,9 @@
         = f.submit "Invent Discipline"
     .sheeple
       Or, I'm a cargo culting sheeple, and
-    %ul
-      - @disciplines.each do |discipline|
-        - cache "discipline#{discipline.id}" do
+    %ul  
+      - cache "disciplinez" do
+        - @disciplines.each do |discipline|
           %li{:"data-id" => discipline.id, :class => "#{'good' if discipline.good} #{'highlight' if discipline.highlight}"}
             .tweet= link_to "Profess my belief".html_safe, "https://twitter.com?status=#{discipline.tweet}"
             .practice= discipline.line

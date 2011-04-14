@@ -7,7 +7,7 @@ body {
 #alert { color: red; font-size: 32px; width: 100%; text-align: center; margin-bottom: 30px; }
 #notice { color: green; font-size: 32px; width: 100%; text-align: center; margin-bottom: 30px; }
 
-form { font-size: 48px; text-align: center; margin-bottom: 80px; }
+form { font-size: 48px; text-align: center; margin-bottom: 40px; }
 input { font-size: 48px; padding: 5px; text-align: center; font-family: georgia, times, serif; border: 1px dashed #d9d9d9; border-bottom: 3px solid black; outline: none; }
 #discipline_initial {  margin-right: -10px; width: 50px;}
 #discipline_expanded { width: 400px; }
@@ -25,6 +25,7 @@ ul .tagline { font-size: 14px; margin-top: 5px; color: #999;}
 ul .tweet { float: right; text-align: center; }
 ul .tweet a { color: #666; }
 ul li:hover { background-color: #FFFFCC; }
+ul li.ad { background-color: #FFFFCC; margin: 10px 0px; margin-bottom: 40px;}
 
 ul li.highlight { background-color: #D7FFA8; }
 ul li.good { margin: 10px 0px; }

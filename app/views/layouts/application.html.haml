@@ -29,10 +29,11 @@
       Or, I'm a cargo culting sheeple, and
     %ul
       - @disciplines.each do |discipline|
-        %li{:"data-id" => discipline.id, :class => "#{'good' if discipline.good} #{'highlight' if discipline.highlight}"}
-          .tweet= link_to "Profess my belief".html_safe, "https://twitter.com?status=#{discipline.tweet}"
-          .practice= discipline.line
-          .tagline= discipline.tagline.blank? ? link_to("add tagline!", "#", :class => "missing-tagline", :"data-initial" => discipline.initial, :"data-expanded" => discipline.expanded) : discipline.tagline
+        - cache "discipline#{discipline.id}" do
+          %li{:"data-id" => discipline.id, :class => "#{'good' if discipline.good} #{'highlight' if discipline.highlight}"}
+            .tweet= link_to "Profess my belief".html_safe, "https://twitter.com?status=#{discipline.tweet}"
+            .practice= discipline.line
+            .tagline= discipline.tagline.blank? ? link_to("add tagline!", "#", :class => "missing-tagline", :"data-initial" => discipline.initial, :"data-expanded" => discipline.expanded) : discipline.tagline
     #footer
       = render :partial => "/layouts/fb"
       = render :partial => "/layouts/twitter"

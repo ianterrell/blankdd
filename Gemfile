@@ -11,6 +11,7 @@ gem 'haml'
 gem 'haml-rails'
 
 gem 'taps'
+gem 'dalli'
 
 # Use unicorn as the web server
 # gem 'unicorn'

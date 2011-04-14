@@ -17,6 +17,7 @@ class DisciplinesController < ApplicationController
           "tl;dt! Too long, doesn't tweet!"
         else
           if @existing.save
+            expire_fragment("discipline#{@existing.id}")
             flash[:notice] = "You stand on the shoulders of giants. Now <a href=\"https://twitter.com?status=".html_safe + @existing.tweet + "\">profess your belief.</a>".html_safe
             nil
           else

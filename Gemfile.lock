@@ -30,6 +30,7 @@ GEM
     activesupport (3.0.6)
     arel (2.0.9)
     builder (2.1.2)
+    dalli (1.0.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     haml (3.0.25)
@@ -90,6 +91,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dalli
   haml
   haml-rails
   rails (= 3.0.6)

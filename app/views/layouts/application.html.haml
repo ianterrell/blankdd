@@ -29,7 +29,7 @@
       Or, I'm a cargo culting sheeple, and
     %ul
       - @disciplines.each do |discipline|
-        %li{:"data-id" => discipline.id, :class => "#{'awesome' if discipline.awesome}"}
+        %li{:"data-id" => discipline.id, :class => "#{'awesome' if discipline.awesome} #{'highlight' if discipline.highlight}"}
           .tweet= link_to "Profess my belief".html_safe, "https://twitter.com?status=#{discipline.tweet}"
           .practice= discipline.line
           .tagline= discipline.tagline.blank? ? link_to("add tagline!", "#", :class => "missing-tagline", :"data-initial" => discipline.initial, :"data-expanded" => discipline.expanded) : discipline.tagline

@@ -16,6 +16,10 @@ class Discipline < ActiveRecord::Base
   def awesome
     attributes['awesome'] || false
   end
+
+  def highlight
+    attributes['highlight'] || false
+  end
   
 protected
   def set_downcased

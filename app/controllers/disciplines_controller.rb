@@ -17,7 +17,7 @@ class DisciplinesController < ApplicationController
           "tl;dt! Too long, doesn't tweet!"
         else
           if @existing.save
-            flash[:notice] = "You stand on the shoulders of giants. Now <a href=\"https://twitter.com?status=#{@existing.tweet}\">profess your belief.</a>".html_safe
+            flash[:notice] = "You stand on the shoulders of giants. Now <a href=\"https://twitter.com?status=".html_safe + @existing.tweet + "\">profess your belief.</a>".html_safe
             nil
           else
             "FAIL!"
@@ -32,7 +32,7 @@ class DisciplinesController < ApplicationController
       "FAIL!"
     end
     unless flash[:alert]
-      flash[:notice] ||= "So you say. Now <a href=\"https://twitter.com?status=#{@discipline.tweet}\">profess your belief.</a>".html_safe
+      flash[:notice] ||= "So you say. Now <a href=\"https://twitter.com?status=".html_safe + @discipline.tweet + "\">profess your belief.</a>".html_safe
     end
     redirect_to root_path
   end

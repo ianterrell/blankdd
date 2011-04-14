@@ -26,3 +26,4 @@ ul .tweet { float: right; text-align: center; }
 ul li:hover { background-color: #FFFFCC; }
 
 #footer { margin-top: 60px; }
+a.missing-tagline { color: #ccc; font-style: italic; }

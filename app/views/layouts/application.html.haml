@@ -4,11 +4,8 @@
     %title _DD: What do you practice?
     = stylesheet_link_tag :all
     = csrf_meta_tag
-    :javascript
-      function formfocus() {
-         document.getElementById('discipline_initial').focus();
-      }
-      window.onload = formfocus;
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", :type => "text/javascript"}
+    = javascript_include_tag 'application'
     = render :partial => "/layouts/analytics" if Rails.env.production?
   %body
     #body
@@ -35,7 +32,7 @@
         %li
           .tweet= link_to "Profess my belief".html_safe, "https://twitter.com?status=#{discipline.tweet}"
           .practice= discipline.line
-          .tagline= discipline.tagline
+          .tagline= discipline.tagline.blank? ? link_to("add tagline!", "#", :class => "missing-tagline", :"data-initial" => discipline.initial, :"data-expanded" => discipline.expanded) : discipline.tagline
     #footer
       = render :partial => "/layouts/fb"
       = render :partial => "/layouts/twitter"

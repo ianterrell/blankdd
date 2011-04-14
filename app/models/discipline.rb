@@ -2,6 +2,7 @@ class Discipline < ActiveRecord::Base
   default_scope order("awesome desc").order(:expanded)
   
   validates_presence_of :initial, :expanded
+  validates_length_of :expanded, :minimum => 2
   
   before_create :set_downcased
 

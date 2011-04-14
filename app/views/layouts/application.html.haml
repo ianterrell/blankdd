@@ -28,11 +28,14 @@
     .sheeple
       Or, I'm a cargo culting sheeple, and
     %ul
-      - @disciplines.each do |discipline|
-        %li
-          .tweet= link_to "Profess my belief".html_safe, "https://twitter.com?status=#{discipline.tweet}"
-          .practice= discipline.line
-          .tagline= discipline.tagline.blank? ? link_to("add tagline!", "#", :class => "missing-tagline", :"data-initial" => discipline.initial, :"data-expanded" => discipline.expanded) : discipline.tagline
+      - @disciplines.group_by(&:awesome).each do |awesome, disciplines|
+        %h3= awesome ? "Awesome" : "The Rest"
+        - disciplines.each do |discipline|
+          %li{:"data-id" => discipline.id, :class => "#{'awesome' if discipline.awesome}"}
+            .tweet= link_to "Profess my belief".html_safe, "https://twitter.com?status=#{discipline.tweet}"
+            .practice= discipline.line
+            .tagline= discipline.tagline.blank? ? link_to("add tagline!", "#", :class => "missing-tagline", :"data-initial" => discipline.initial, :"data-expanded" => discipline.expanded) : discipline.tagline
+        .spacer
     #footer
       = render :partial => "/layouts/fb"
       = render :partial => "/layouts/twitter"

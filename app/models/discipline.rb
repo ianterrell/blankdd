@@ -13,6 +13,10 @@ class Discipline < ActiveRecord::Base
     tagline.blank? ? "#{line} — http://blankdd.com" : "#{line} — #{tagline} — http://blankdd.com"
   end
   
+  def awesome
+    attributes['awesome'] || false
+  end
+  
 protected
   def set_downcased
     self.downcased = self.expanded.downcase

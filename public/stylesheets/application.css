@@ -24,6 +24,8 @@ ul .practice { font-size: 24px; margin-bottom: 0px; }
 ul .tagline { font-size: 18px; margin-top: 5px; }
 ul .tweet { float: right; text-align: center; }
 ul li:hover { background-color: #FFFFCC; }
+ul li.awesome { background-color: #D7FFA8; }
 
 #footer { margin-top: 60px; }
 a.missing-tagline { color: #ccc; font-style: italic; }
+.spacer { height: 60px; }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110414170035) do
+ActiveRecord::Schema.define(:version => 20110414205521) do
 
   create_table "disciplines", :force => true do |t|
     t.string   "initial",    :limit => 1
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20110414170035) do
     t.string   "tagline"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "awesome",                 :default => false
   end
 
 end

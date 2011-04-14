@@ -28,7 +28,7 @@
     .sheeple
       Or, I'm a cargo culting sheeple, and
     %ul
-      - @disciplines.group_by(&:awesome).each do |awesome, disciplines|
+      - @disciplines.group_by(&:awesome).sort{|a,b|a == b ? 0 : (a ? 1 : -1)}.each do |awesome, disciplines|
         %h3= awesome ? "Awesome" : "The Rest"
         - disciplines.each do |discipline|
           %li{:"data-id" => discipline.id, :class => "#{'awesome' if discipline.awesome}"}

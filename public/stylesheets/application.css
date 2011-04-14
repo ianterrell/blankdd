@@ -20,8 +20,8 @@ input { font-size: 48px; padding: 5px; text-align: center; font-family: georgia,
 
 ul { list-style: none; margin: 0px; padding: 0px; }
 ul li { padding: 10px; margin-top: 0px; }
-ul .practice { font-size: 18px; margin-bottom: 0px; color: #444; }
-ul .tagline { font-size: 14px; margin-top: 5px; color: #777;}
+ul .practice { font-size: 18px; margin-bottom: 0px; color: #666; }
+ul .tagline { font-size: 14px; margin-top: 5px; color: #999;}
 ul .tweet { float: right; text-align: center; }
 ul .tweet a { color: #666; }
 ul li:hover { background-color: #FFFFCC; }

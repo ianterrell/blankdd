@@ -18,7 +18,7 @@ class DisciplinesController < ApplicationController
       "FAIL!"
     end
     unless flash[:alert]
-      flash[:notice] = "Hurray! Now <a href=\"https://twitter.com?status=#{@discipline.tweet}\">profess your belief.</a>".html_safe
+      flash[:notice] = "So you say. Now <a href=\"https://twitter.com?status=#{@discipline.tweet}\">profess your belief.</a>".html_safe
     end
     redirect_to root_path
   end

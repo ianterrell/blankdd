@@ -21,6 +21,9 @@ class Discipline < ActiveRecord::Base
     attributes['highlight'] || false
   end
   
+  def good
+    attributes['good'] || false
+  end
 protected
   def set_downcased
     self.downcased = self.expanded.downcase

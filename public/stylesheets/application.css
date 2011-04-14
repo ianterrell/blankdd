@@ -20,17 +20,17 @@ input { font-size: 48px; padding: 5px; text-align: center; font-family: georgia,
 
 ul { list-style: none; margin: 0px; padding: 0px; }
 ul li { padding: 10px; margin-top: 0px; }
-ul .practice { font-size: 18px; margin-bottom: 0px; color: #999; }
-ul .tagline { font-size: 14px; margin-top: 5px; color: #aaa;}
+ul .practice { font-size: 18px; margin-bottom: 0px; color: #444; }
+ul .tagline { font-size: 14px; margin-top: 5px; color: #777;}
 ul .tweet { float: right; text-align: center; }
 ul .tweet a { color: #666; }
 ul li:hover { background-color: #FFFFCC; }
 
 ul li.highlight { background-color: #D7FFA8; }
-ul li.awesome { margin: 10px 0px; }
-ul li.awesome .practice { font-size: 24px; margin-bottom: 0px; color: #333;}
-ul li.awesome .tagline { font-size: 18px; margin-top: 5px; color: #666; }
-ul li.awesome .tweet a { color: blue; }
+ul li.good { margin: 10px 0px; }
+ul li.good .practice { font-size: 24px; margin-bottom: 0px; color: #333;}
+ul li.good .tagline { font-size: 18px; margin-top: 5px; color: #666; }
+ul li.good .tweet a { color: blue; }
 
 #footer { margin-top: 60px; }
 a.missing-tagline { color: #ccc; font-style: italic; }

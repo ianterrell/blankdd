@@ -14,6 +14,8 @@
     #body
       - if alert
         #alert= alert
+      - if notice
+        #notice= notice
       = form_for Discipline.new do |f|
         I practice
         = f.text_field :initial, :maxlength => 1

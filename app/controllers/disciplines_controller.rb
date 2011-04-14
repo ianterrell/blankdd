@@ -24,7 +24,7 @@ class DisciplinesController < ApplicationController
           end
         end
       else
-        "Sheeple! Someone else already invented that."
+        "Sheeple! Someone else already invented that.<br/>Now <a href=\"https://twitter.com?status=".html_safe + @existing.tweet + "\">profess your belief.</a>".html_safe
       end
     elsif @discipline.tweet.size > 140
       "tl;dt! Too long, doesn't tweet!"

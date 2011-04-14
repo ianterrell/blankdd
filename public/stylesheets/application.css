@@ -1,0 +1,27 @@
+body {
+  margin: 60px auto;
+  width: 960px;
+  font-family: georgia, times, serif;
+}
+
+#alert { color: red; font-size: 32px; width: 100%; text-align: center; margin-bottom: 30px; }
+
+form { font-size: 48px; text-align: center; margin-bottom: 80px; }
+input { font-size: 48px; padding: 5px; text-align: center; font-family: georgia, times, serif; border: 1px dashed #d9d9d9; border-bottom: 3px solid black; outline: none; }
+#discipline_initial {  margin-right: -10px; width: 50px;}
+#discipline_expanded { width: 400px; }
+.tagline { font-size: 24px; color: #666; margin-top: 10px; }
+.tagline input { border-bottom: 1px dashed #d9d9d9; width: 700px; font-size: 24px; color: #666; }
+#discipline_submit { margin-top: 20px; font-size: 24px; border: 3px solid #999; cursor: pointer; }
+#discipline_submit:hover { background-color: #ddd; }
+
+.sheeple { width: 100%; text-align: center; }
+
+ul { list-style: none; margin: 0px; padding: 0px; }
+ul li { padding: 10px; margin-top: 20px; }
+ul .practice { font-size: 24px; margin-bottom: 0px; }
+ul .tagline { font-size: 18px; margin-top: 5px; }
+ul .tweet { float: right; text-align: center; }
+ul li:hover { background-color: #FFFFCC; }
+
+#footer { margin-top: 60px; }

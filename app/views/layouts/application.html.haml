@@ -1,0 +1,43 @@
+!!!
+%html
+  %head
+    %title _DD: What do you practice?
+    = stylesheet_link_tag :all
+    = csrf_meta_tag
+    :javascript
+      function formfocus() {
+         document.getElementById('discipline_initial').focus();
+      }
+      window.onload = formfocus;
+  %body
+    #body
+      - if alert
+        #alert= alert
+      = form_for Discipline.new do |f|
+        I practice
+        = f.text_field :initial, :maxlength => 1
+        DD:
+        %br/
+        = f.text_field :expanded, :maxlength => 64
+        Driven Development.
+        %br/
+        .tagline
+          %small tagline:
+          = f.text_field :tagline, :maxlength => 128
+        = f.submit "Invent Discipline"
+    .sheeple
+      Or, I'm a cargo culting sheeple, and
+    %ul
+      - @disciplines.each do |discipline|
+        %li
+          .tweet= link_to "Profess my belief".html_safe, "https://twitter.com?status=#{discipline.tweet}"
+          .practice= discipline.line
+          .tagline= discipline.tagline
+    #footer
+      = render :partial => "/layouts/fb"
+      %br/
+      %br/
+      Site by #{link_to "Ian Terrell", "http://ianterrell.com"}. 
+      %br/
+      %br/
+      Want to win free iPhone apps? Or are you an iOS developer and want to market your own apps? Check out my new service, #{link_to "Appnu", "http://www.appnu.com/?utm_source=sideprojects&utm_medium=site&utm_campaign=blankdd"}.

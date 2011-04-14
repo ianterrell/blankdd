@@ -9,6 +9,7 @@
          document.getElementById('discipline_initial').focus();
       }
       window.onload = formfocus;
+    = render :partial => "/layouts/analytics" if Rails.env.production?
   %body
     #body
       - if alert

@@ -8,7 +8,7 @@ class DisciplinesController < ApplicationController
 
   def create
     @discipline = Discipline.new(params[:discipline])
-    flash[:alert] = if @discipline.expanded[0..0].downcase != @discipline.initial.downcase
+    flash[:alert] = if @discipline.expanded.chars.first.downcase != @discipline.initial.downcase
       "Don't you know what an initialism is?"
     elsif @existing = Discipline.find_by_downcased(@discipline.expanded.downcase)
       if @existing.tagline.blank? && !@discipline.tagline.blank?

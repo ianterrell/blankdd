@@ -10,7 +10,7 @@ class Discipline < ActiveRecord::Base
   end
   
   def tweet
-    "#{line} — #{tagline} — http://blankdd.com"
+    tagline.blank? ? "#{line} — http://blankdd.com" : "#{line} — #{tagline} — http://blankdd.com"
   end
   
 protected

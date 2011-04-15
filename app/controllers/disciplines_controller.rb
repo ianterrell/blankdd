@@ -1,9 +1,53 @@
 class DisciplinesController < ApplicationController
+  before_filter :authenticate, :only => [:admin, :ignore, :unignore, :awesome, :good, :highlight]
   respond_to :html
 
   def index
-    @disciplines = Discipline.all
+    @disciplines = Discipline.unignored
     respond_with @disciplines
+  end
+  
+  def admin
+    @disciplines = Discipline.unscoped.all
+    render :action => :admin, :layout => nil
+  end
+  
+  def ignore
+    @discipline = Discipline.find(params[:id])
+    @discipline.ignore = true
+    @discipline.save
+    redirect_to admin_disciplines_path
+  end
+  
+  def unignore
+    @discipline = Discipline.find(params[:id])
+    @discipline.ignore = false
+    @discipline.save
+    redirect_to admin_disciplines_path
+  end
+  
+  def awesome
+    @discipline = Discipline.find(params[:id])
+    @discipline.awesome = true
+    @discipline.good = true
+    @discipline.save
+    redirect_to admin_disciplines_path
+  end
+  
+  def good
+    @discipline = Discipline.find(params[:id])
+    @discipline.good = true
+    @discipline.save
+    redirect_to admin_disciplines_path
+  end
+  
+  def highlight
+    @discipline = Discipline.find(params[:id])
+    @discipline.awesome = true
+    @discipline.good = true
+    @discipline.highlight = true
+    @discipline.save
+    redirect_to admin_disciplines_path
   end
 
   def create
@@ -36,5 +80,11 @@ class DisciplinesController < ApplicationController
       flash[:notice] ||= "So you say. Now <a href=\"https://twitter.com?status=".html_safe + @discipline.tweet + "\">profess your belief.</a>".html_safe
     end
     redirect_to root_path
+  end
+private
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password| 
+      username == "admin" && password == "supertopsecret813"
+    end
   end
 end

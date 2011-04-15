@@ -1,5 +1,6 @@
 class Discipline < ActiveRecord::Base
   default_scope order("awesome desc").order(:expanded)
+  scope :unignored, where(:ignore => false)
   
   validates_presence_of :initial, :expanded
   validates_length_of :expanded, :minimum => 2

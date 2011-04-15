@@ -26,6 +26,7 @@ ul .tweet { float: right; text-align: center; }
 ul .tweet a { color: #666; }
 ul li:hover { background-color: #FFFFCC; }
 ul li.ad { background-color: #FFFFCC; margin: 10px 0px; margin-bottom: 40px;}
+ul li.ignored { background-color: #FFDDDD;}
 
 ul li.highlight { background-color: #D7FFA8; }
 ul li.good { margin: 10px 0px; }

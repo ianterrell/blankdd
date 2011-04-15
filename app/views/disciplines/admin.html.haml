@@ -13,11 +13,11 @@
         %li{:"data-id" => discipline.id, :class => "#{'good' if discipline.good} #{'highlight' if discipline.highlight} #{'ignored' if discipline.ignore}"}
           .tweet 
             - if discipline.ignore?
-              = link_to "Unignore", unignore_discipline_path(discipline), :method => :post
+              = link_to "Unignore", unignore_discipline_path(discipline), :method => :post, :remote => true
             - else
-              = link_to "Ignore", ignore_discipline_path(discipline), :method => :post
-            = link_to "Highlight", highlight_discipline_path(discipline), :method => :post  
-            = link_to "Awesome", awesome_discipline_path(discipline), :method => :post
-            = link_to "Good", good_discipline_path(discipline), :method => :post
+              = link_to "Ignore", ignore_discipline_path(discipline), :method => :post, :remote => true
+            = link_to "Highlight", highlight_discipline_path(discipline), :method => :post  , :remote => true
+            = link_to "Awesome", awesome_discipline_path(discipline), :method => :post, :remote => true
+            = link_to "Good", good_discipline_path(discipline), :method => :post, :remote => true
           .practice= discipline.line
           .tagline= discipline.tagline.blank? ? link_to("add tagline!", "#", :class => "missing-tagline", :"data-initial" => discipline.initial, :"data-expanded" => discipline.expanded) : discipline.tagline

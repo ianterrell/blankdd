@@ -1,35 +1,37 @@
 !!!
 %html
-  %head
-    %title _DD: What do you practice?
-    = stylesheet_link_tag :all
-    = csrf_meta_tag
-    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", :type => "text/javascript"}
-    = javascript_include_tag 'application'
-    = render :partial => "/layouts/analytics" if Rails.env.production?
+  - cache 'head' do
+    %head
+      %title _DD: What do you practice?
+      = stylesheet_link_tag :all
+      = csrf_meta_tag
+      %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", :type => "text/javascript"}
+      = javascript_include_tag 'application'
+      = render :partial => "/layouts/analytics" if Rails.env.production?
   %body
     #body
       - if alert
         #alert= alert
       - if notice
         #notice= notice
-      = form_for Discipline.new do |f|
-        I practice
-        = f.text_field :initial, :maxlength => 1
-        DD:
-        %br/
-        = f.text_field :expanded, :maxlength => 64
-        Driven Development.
-        %br/
-        .tagline
-          %small tagline:
-          = f.text_field :tagline, :maxlength => 128
-        = f.submit "Invent Discipline"
-    %ul
-      %li.ad
-        Want to win free iPhone apps? Or are you an iOS developer and want to market your own apps? Check out my new service, #{link_to "Appnu", "http://www.appnu.com/?utm_source=sideprojects&utm_medium=site&utm_campaign=blankdd"}.
-    .sheeple
-      Or, I'm a cargo culting sheeple, and
+      - cache 'top' do
+        = form_for Discipline.new do |f|
+          I practice
+          = f.text_field :initial, :maxlength => 1
+          DD:
+          %br/
+          = f.text_field :expanded, :maxlength => 64
+          Driven Development.
+          %br/
+          .tagline
+            %small tagline:
+            = f.text_field :tagline, :maxlength => 128
+          = f.submit "Invent Discipline"
+      %ul
+        %li.ad
+          Want to win free iPhone apps? Or are you an iOS developer and want to market your own apps? Check out my new service, #{link_to "Appnu", "http://www.appnu.com/?utm_source=sideprojects&utm_medium=site&utm_campaign=blankdd"}.
+      .sheeple
+        Or, I'm a cargo culting sheeple, and
     %ul  
       - cache "disciplinez" do
         - @disciplines.each do |discipline|
@@ -37,12 +39,13 @@
             .tweet= link_to "Profess my belief".html_safe, "https://twitter.com?status=#{discipline.tweet}"
             .practice= discipline.line
             .tagline= discipline.tagline.blank? ? link_to("add tagline!", "#", :class => "missing-tagline", :"data-initial" => discipline.initial, :"data-expanded" => discipline.expanded) : discipline.tagline
-    #footer
-      = render :partial => "/layouts/fb"
-      = render :partial => "/layouts/twitter"
-      %br/
-      %br/
-      Site by #{link_to "Ian Terrell", "http://ianterrell.com"}. 
-      %br/
-      %br/
-      Want to win free iPhone apps? Or are you an iOS developer and want to market your own apps? Check out my new service, #{link_to "Appnu", "http://www.appnu.com/?utm_source=sideprojects&utm_medium=site&utm_campaign=blankdd"}.
+    - cache 'footer' do
+      #footer
+        = render :partial => "/layouts/fb"
+        = render :partial => "/layouts/twitter"
+        %br/
+        %br/
+        Site by #{link_to "Ian Terrell", "http://ianterrell.com"}. 
+        %br/
+        %br/
+        Want to win free iPhone apps? Or are you an iOS developer and want to market your own apps? Check out my new service, #{link_to "Appnu", "http://www.appnu.com/?utm_source=sideprojects&utm_medium=site&utm_campaign=blankdd"}.

@@ -5,6 +5,8 @@ class Discipline < ActiveRecord::Base
   validates_length_of :expanded, :minimum => 2
   
   before_create :set_downcased
+  
+  attr_protected :awesome, :highlight, :good
 
   def line
     "I practice #{initial}DD: #{expanded} Driven Development."

@@ -16,14 +16,14 @@ class DisciplinesController < ApplicationController
     @discipline = Discipline.find(params[:id])
     @discipline.ignore = true
     @discipline.save
-    redirect_to admin_disciplines_path
+    render :text => ""
   end
   
   def unignore
     @discipline = Discipline.find(params[:id])
     @discipline.ignore = false
     @discipline.save
-    redirect_to admin_disciplines_path
+    render :text => ""
   end
   
   def awesome
@@ -31,14 +31,14 @@ class DisciplinesController < ApplicationController
     @discipline.awesome = true
     @discipline.good = true
     @discipline.save
-    redirect_to admin_disciplines_path
+    render :text => ""
   end
   
   def good
     @discipline = Discipline.find(params[:id])
     @discipline.good = true
     @discipline.save
-    redirect_to admin_disciplines_path
+    render :text => ""
   end
   
   def highlight
@@ -47,7 +47,7 @@ class DisciplinesController < ApplicationController
     @discipline.good = true
     @discipline.highlight = true
     @discipline.save
-    redirect_to admin_disciplines_path
+    render :text => ""
   end
 
   def create

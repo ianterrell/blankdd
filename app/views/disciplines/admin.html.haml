@@ -1,12 +1,11 @@
 !!!
 %html
-  - cache 'head' do
-    %head
-      %title _DD: What do you practice?
-      = stylesheet_link_tag :all
-      = csrf_meta_tag
-      %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", :type => "text/javascript"}
-      = javascript_include_tag 'application', 'rails'
+  %head
+    %title _DD: What do you practice?
+    = stylesheet_link_tag :all
+    = csrf_meta_tag
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js", :type => "text/javascript"}
+    = javascript_include_tag 'application', 'rails'
   %body
     #body
     %ul  
